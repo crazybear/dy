@@ -1,0 +1,18 @@
+{
+  "name": "FY",
+  "version": "0.0.1",
+  "description": "fanyi",
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "background_page": "bg.html",
+  "permissions": [
+    "http://*.google.com/",
+    "https://*.google.com/"
+  ],
+  "browser_action": {
+    "default_title": "",
+    "default_icon": "icon_19.png",
+    "default_popup": "popup.html"
+  }
+}
