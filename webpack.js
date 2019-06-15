@@ -7,6 +7,7 @@ function configs(env = 'production') {
     entry: {
       'contentscript': './src/content/index.js',
       'backgroundscript': './src/background/index.js',
+      'huya': './src/inner/huya.js',
     },
     output: {
       path: path.resolve(__dirname, env === 'production' ? './release' : './dist'),
@@ -38,14 +39,14 @@ function configs(env = 'production') {
         }
       ],
     },
-    plugins: [
-      new HtmlWebpackPlugin({
-        title: 'popup',
-        filename: 'popup.html',
-        template: path.resolve(__dirname, './src/popup/index.html'),
-        inject: false,
-      }),
-    ],
+    // plugins: [
+    //   new HtmlWebpackPlugin({
+    //     title: 'popup',
+    //     filename: 'popup.html',
+    //     template: path.resolve(__dirname, './src/popup/index.html'),
+    //     inject: false,
+    //   }),
+    // ],
   }
 }
 module.exports = configs;

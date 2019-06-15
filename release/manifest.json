@@ -7,12 +7,10 @@
     "128": "icon.png"
   },
   "background": {
-    "scripts": ["backgroundscript.js"]
   },
   "browser_action": {
     "default_title": "翻译",
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_icon": "icon.png"
   },
   "content_scripts": [
     {
@@ -20,6 +18,9 @@
       "js": ["contentscript.js"],
       "run_at": "document_end"
     }
+  ],
+  "web_accessible_resources" : [
+    "huya.js"
   ],
   "permissions": [
     "contextMenus",

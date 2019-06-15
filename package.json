@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js",
-    "build": "node build.js"
+    "dev": "rm -rf ./dist && node server.js",
+    "build": "rm -rf ./release && node build.js"
   },
   "author": "",
   "license": "MIT",
