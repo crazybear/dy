@@ -5,7 +5,7 @@ const from = 'zh';
 // const to = 'en';
 const to = 'kor';
 
-export default function sendTxtToApi(q, successCallback, errorCallback) {
+export default function sendTxtToApi(q, successCallback = () => {}, errorCallback = () => {}) {
   function urlParams(data) {
     let res = [];
     for (let k in data) {

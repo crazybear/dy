@@ -11,8 +11,7 @@
   },
   "browser_action": {
     "default_title": "翻译",
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_icon": "icon.png"
   },
   "content_scripts": [
     {
@@ -29,6 +28,8 @@
     "webRequestBlocking",
     "storage",
     "http://*.huya.com/*",
-    "https://*.huya.com/*"
+    "https://*.huya.com/*",
+    "http://*.baidu.com/*",
+    "https://*.baidu.com/*"
   ]
 }

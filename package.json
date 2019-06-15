@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node webpack.js"
+    "dev": "node server.js",
+    "build": "node build.js"
   },
   "author": "",
   "license": "MIT",

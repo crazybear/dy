@@ -36,7 +36,6 @@ function setChatList() {
   }
   const chatList = $('#chat-room__list');
   chatList.on('mouseenter', '.msg', function(){
-    console.log(this);
     const messageElement = $(this);
     if (!messageElement.data(t_key)) {
       const text = messageElement.text();

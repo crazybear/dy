@@ -16,7 +16,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["http://*.huya.com/*", "https://*.huya.com/*"],
       "js": ["contentscript.js"],
       "run_at": "document_end"
     }
@@ -28,7 +28,9 @@
     "webRequest",
     "webRequestBlocking",
     "storage",
-    "http://*/*",
-    "https://*/*"
+    "http://*.huya.com/*",
+    "https://*.huya.com/*",
+    "http://*.baidu.com/*",
+    "https://*.baidu.com/*"
   ]
 }

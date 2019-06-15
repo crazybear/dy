@@ -3,4 +3,4 @@ node_modules/
 .idea/
 .vscode/
 .sass-cache/
-build/
+dist/
