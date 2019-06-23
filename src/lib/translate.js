@@ -7,7 +7,7 @@ const to = 'kor';
 
 const trans_cache = {};
 
-export default function sendTxtToApi(q) {
+export default function sendTxtToApi(q, $ = window.$) {
   function urlParams(data) {
     let res = [];
     for (let k in data) {

@@ -8,6 +8,7 @@ function configs(env = 'production') {
       'contentscript': './src/content/index.js',
       'backgroundscript': './src/background/index.js',
       'huya': './src/inner/huya.js',
+      'douyu': './src/inner/douyu.js',
     },
     output: {
       path: path.resolve(__dirname, env === 'production' ? './release' : './dist'),

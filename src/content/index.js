@@ -1,5 +1,4 @@
 const hostname = window.location.host;
-
 function injectCustomJs(jsPath = 'js/inject.js') {
   const temp = document.createElement('script');
   const src = chrome.extension.getURL(jsPath);
@@ -12,6 +11,19 @@ function injectCustomJs(jsPath = 'js/inject.js') {
   document.body.appendChild(temp);
 }
 
+function findDom(id, retry = 1, cb = () => {}) {
+  if (retry <= 0 || !retry) {
+    cb(null);
+  }
+  setTimeout(() => {
+    const targetNode = document.getElementById(id);
+    if (!targetNode) {
+      return findDom(id, retry - 1, cb);
+    } else {
+      cb(targetNode);
+    }
+  }, 1000);
+}
 
 if (/huya\.com/.test(hostname)) {
   const targetNode = document.getElementById('chat-room__list');
@@ -19,4 +31,13 @@ if (/huya\.com/.test(hostname)) {
     // insert inject-script
     injectCustomJs('huya.js');
   }
+}
+
+if (/douyu\.com/.test(hostname)) {
+  findDom('js-barrage-list', 10, (targetNode) => {
+    if (targetNode) {
+      // insert inject-script
+      injectCustomJs('douyu.js');
+    }
+  });
 }
