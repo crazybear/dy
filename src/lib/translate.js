@@ -7,7 +7,7 @@ const to = 'kor';
 
 const trans_cache = {};
 
-export default function sendTxtToApi(q, $ = window.$) {
+export default function sendTxtToApi(q, $ = window.$, retry = 0) {
   function urlParams(data) {
     let res = [];
     for (let k in data) {
@@ -39,6 +39,7 @@ export default function sendTxtToApi(q, $ = window.$) {
           url: '//api.fanyi.baidu.com/api/trans/vip/translate',
           type: 'get',
           dataType: 'jsonp',
+          timeout: 3000,
           data: sendP,
           success(response){
             resolve(response);
@@ -49,7 +50,12 @@ export default function sendTxtToApi(q, $ = window.$) {
             }
           },
           error() {
-            reject();
+            if (retry < 1) {
+              console.log('retry!', q);
+              resolve(sendTxtToApi(q, $, retry + 1));
+            } else {
+              reject();
+            }
           }
         });
       }
