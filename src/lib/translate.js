@@ -8,13 +8,6 @@ const to = 'kor';
 const trans_cache = {};
 
 export default function sendTxtToApi(q, $ = window.$, retry = 0) {
-  function urlParams(data) {
-    let res = [];
-    for (let k in data) {
-      res.push(`${k}=${encodeURIComponent(data[k])}`);
-    }
-    return res.join('&');
-  }
   const salt = new Date().getTime();
   const str1 = appid + q + salt + key;
   const sign = MD5(str1);
@@ -62,24 +55,4 @@ export default function sendTxtToApi(q, $ = window.$, retry = 0) {
       
     });
   }
-  // const sendUrl = `https://api.fanyi.baidu.com/api/trans/vip/translate?${sendP}`;
-  // const xhr = new XMLHttpRequest();
-  // xhr.onreadystatechange = function () {
-  //   if (xhr.readyState === 4) {
-  //     if (xhr.status === 200) {
-  //       const responseJson = JSON.parse(xhr.responseText);
-  //       const { trans_result } = responseJson;
-  //       successCallback(trans_result[0]);
-  //     } else {
-  //       // HTTP error
-  //       console.log(xhr.status);
-  //       errorCallback();
-  //     }
-  //   }
-  // }
-  // xhr.onerror = function () {
-  //   errorCallback();
-  // }
-  // xhr.open('GET', sendUrl, true);
-  // xhr.send();
 }

@@ -1,4 +1,4 @@
-import translate from '../lib/translate';
+import translate from '../lib/../lib/ydTranslate';
 import $ from 'jquery';
 
 

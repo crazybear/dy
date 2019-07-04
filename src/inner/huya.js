@@ -1,4 +1,4 @@
-import translate from '../lib/translate';
+import translate from '../lib/../lib/ydTranslate';
 
 function translateNode(node, hasSrc = false) {
   const text = node.text().trim();
