@@ -26,6 +26,7 @@
   ],
   "web_accessible_resources" : [
     "huya.js",
+    "huya.css",
     "douyu.js"
   ],
   "permissions": [

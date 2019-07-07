@@ -11,6 +11,19 @@ function injectCustomJs(jsPath = 'js/inject.js') {
   document.body.appendChild(temp);
 }
 
+function injectCustomcCss(cssPath = 'js/inject.css') {
+  const temp = document.createElement('link');
+  const src = chrome.extension.getURL(cssPath);
+  console.log('inject', src);
+  temp.setAttribute('rel', 'stylesheet');
+  temp.setAttribute('type', 'text/css');
+  temp.href = src;
+  // temp.onload = function(){
+  //     this.parentNode.removeChild(this);
+  // };
+  document.body.appendChild(temp);
+}
+
 function findDom(id, retry = 1, cb = () => {}) {
   if (retry <= 0 || !retry) {
     cb(null);
@@ -30,6 +43,7 @@ if (/huya\.com/.test(hostname)) {
   if (targetNode) {
     // insert inject-script
     injectCustomJs('huya.js');
+    injectCustomcCss('huya.css');
   }
 }
 

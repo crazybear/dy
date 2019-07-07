@@ -1,0 +1,6 @@
+.chat-room__list .name{
+  max-width: 999999px;
+  white-space: inherit;
+  word-break: break-all;
+  word-wrap: break-word;
+}
